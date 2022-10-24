@@ -1,0 +1,20 @@
+.card {
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(129, 126, 126);
+  margin-left: 4vh;
+  margin-right: 4vh;
+  margin-bottom: 1vh;
+  padding: 1vh;
+  color: rgb(133, 4, 4);
+  cursor: pointer;
+  box-shadow: 0px 0px 20px 15px rgba(126, 71, 49, 0.364);
+}
+.card:hover {
+  transform: scale(110%);
+  transition: 0.5s;
+  color: rgb(169, 116, 4);
+  filter: brightness(1.15);
+}
+

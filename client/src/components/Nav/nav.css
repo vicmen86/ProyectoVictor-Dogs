@@ -1,0 +1,32 @@
+.fondoNav {
+  background-color: #221F1F;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:inherit;
+  min-height: 10vh;
+  height: 12vh;
+  width: 100%;
+  opacity: 45%;
+  text-shadow: 1px 1px 5px black;
+  filter: brightness(2);
+}
+.let {
+  cursor: pointer;
+  color: rgb(250, 36, 36);
+  font-size: 30px;
+  font-family: 'Century Gothic', sans-serif;
+}
+.let:hover {
+  transform: scale(135%);
+  color: red;
+  transition: 0.5s;
+  text-shadow: 1px 1px 20px black;
+}
+@media (max-width: 570px) {
+  .let {
+    font-size: 20px;
+  }
+}
+
+
