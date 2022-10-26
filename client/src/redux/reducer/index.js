@@ -67,7 +67,7 @@ function RootReducer(state = initialState, action) {
     case "ORDER":
       let sort = [];
       let order = action.payload;
-      if (order == "all")
+      if (order === "all")
         return {
           ...state,
           orderFilter: {
@@ -75,7 +75,7 @@ function RootReducer(state = initialState, action) {
             order: "all",
           },
         };
-      if (order == "asc") {
+      if (order === "asc") {
         sort = state.Dogs.sort((a, b) => {
           if (a.name.toLowerCase() > b.name.toLowerCase()) {
             return 1;
@@ -86,7 +86,7 @@ function RootReducer(state = initialState, action) {
           return 0;
         });
       }
-      if (order == "dsc") {
+      if (order === "dsc") {
         sort = state.Dogs.sort((a, b) => {
           if (a.name.toLowerCase() > b.name.toLowerCase()) {
             return -1;
@@ -97,7 +97,7 @@ function RootReducer(state = initialState, action) {
           return 0;
         });
       }
-      if (order == "minwgt") {
+      if (order === "minwgt") {
         sort = state.Dogs.sort((a, b) => {
           return (//esta esprecion hace un remplazo cualquier espacio vacio, y se corta para operar con el seguindo valor
             a.weight.metric.replace(/\s+/g, "").split("-")[1] -
@@ -105,7 +105,7 @@ function RootReducer(state = initialState, action) {
           );
         });
       }
-      if (order == "maxwgt") {
+      if (order === "maxwgt") {
         sort = state.Dogs.sort(
           (a, b) =>
             b.weight.metric.replace(/\s+/g, "").split("-")[1] -

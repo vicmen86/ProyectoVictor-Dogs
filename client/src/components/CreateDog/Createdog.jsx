@@ -7,9 +7,11 @@ import validate from "../Validation/Validate.js";
 import "./Createdog.css";
 
 const Createdog = () => {
+
   const navigate = useNavigate();
+    const dispatch = useDispatch();
   const dogs = useSelector((state) => state.Dogs);
-  const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getTemperament());
   }, [dispatch]);
@@ -44,7 +46,6 @@ const Createdog = () => {
       navigate("/home");
     }
   };
-  //el handleChange es el que añade el valor del input al estado que estoy por enviar a store por form. tambien tiene la funcion setErrors que es lo que valida.
 
   const handleChange = (e) => {
     setInput({...input, [e.target.name]: e.target.value,
