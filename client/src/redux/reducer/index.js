@@ -99,7 +99,7 @@ function RootReducer(state = initialState, action) {
       }
       if (order == "minwgt") {
         sort = state.Dogs.sort((a, b) => {
-          return (
+          return (//esta esprecion hace un remplazo cualquier espacio vacio, y se corta para operar con el seguindo valor
             a.weight.metric.replace(/\s+/g, "").split("-")[1] -
             b.weight.metric.replace(/\s+/g, "").split("-")[1]
           );

@@ -3,11 +3,11 @@ import "./landing.css";
 import { Link } from "react-router-dom";
 import Clip from '../../img/Produce.mp4';
 
-const landing = () => {
+const Landing = () => {
   return (
     <div className="body">
       <video src={Clip} autoPlay muted loop class="videoClip"/>
-      <div className="positioning">
+      <div className="posicion">
         <h1 className="title">Bienvenido!</h1>
         <div>
           <Link to="/home">
@@ -20,4 +20,4 @@ const landing = () => {
 };
 
 
-export default landing;
+export default Landing;

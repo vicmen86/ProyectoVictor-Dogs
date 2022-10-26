@@ -9,13 +9,13 @@ const Error404 = () => {
           <p>OOPS ERROR 404!</p>
         </div>
         <div>
-          <p>SOMETHING WENT INCREDIBLY AWFULLY WRONG!</p>
+          <p>ALGO SALIO MAL, NO PUDIMOS ENCONTRAR TU SOLICITUD!</p>
         </div>
         <button
           className="getback"
           onClick={() => window.location.replace("/home")}
         >
-          GET BACK TO HOME
+          VOLVER A HOME
         </button>
       </div>
     </>

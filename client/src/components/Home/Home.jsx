@@ -1,31 +1,30 @@
 import React, { useEffect, useState } from "react";
-import Searchbar from "../Searchbar/searchbar.jsx";
-import Card from "../Card/card.jsx";
-import {
-  getDogs,Order,FilterByTemperament,FilterCreated,getTemperament,
+import Searchbar from "../Searchbar/Searchbar.jsx";
+import Card from "../Card/Card.jsx";
+import {getDogs,Order,FilterByTemperament,FilterCreated,getTemperament,
 } from "../../redux/actions/index.js";
 import { useDispatch, useSelector } from "react-redux";
 import Paginado from "../Paginado/Paginado.jsx";
-import Nav from "../Nav/nav.jsx";
+import Nav from "../Nav/Nav.jsx";
 import gif from "../../img/GIFCARGA.gif";
 import "./Home.css";
 
 const Home = () => {
   const Temperaments = useSelector((state) => state.Temperaments);
+  const allDogs = useSelector((state) => state.Dogs);
+  const orderFilter = useSelector((state) => state.orderFilter.FilterApiDB);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getDogs());
     dispatch(getTemperament());
   }, [dispatch]);
-  const allDogs = useSelector((state) => state.Dogs);
-
-  const orderFilter = useSelector((state) => state.orderFilter.FilterApiDB);
+  
+//paginacion
   const [CurrentPage, setCurrentPage] = useState(1);
-
   const [DogsPerPage, setDogsPerPage] = useState(8);
-  const TotalPages = Math.ceil(allDogs.length / DogsPerPage);
-  //-------------------PAGINADO------------------//
 
+  const TotalPages = Math.ceil(allDogs.length / DogsPerPage);
+  
   const paginaSig = () => {
     setCurrentPage(CurrentPage + 1);
   };
@@ -38,14 +37,14 @@ const Home = () => {
   const lastPage = () => {
     setCurrentPage(TotalPages);
   };
-  //------------------PAGINADO-------------------//
-  //-------------------------INDICES----------------------
+  //indice
   const IndexOfLastDog = CurrentPage * DogsPerPage;
   const IndexOfFirstDog = IndexOfLastDog - DogsPerPage;
   const CurrentDogs = allDogs.slice(IndexOfFirstDog, IndexOfLastDog);
-  //--------------------------INDICES------------------------
+
+  //filtrados, temp
   let actualorderFilter = useSelector((state) => state.orderFilter);
-  //--------------------FILTRAR POR TEMPERAMENTO------------------//
+
   function Filtersbytemp(e) {
     e.preventDefault();
     dispatch(FilterCreated(actualorderFilter.FilterApiDB));
@@ -53,9 +52,7 @@ const Home = () => {
     dispatch(Order(actualorderFilter.order));
     setCurrentPage(1);
   }
-  //--------------------FILTRAR POR TEMPERAMENTO--------------------//
-
-  //---------------------FILTRAR POR DB----------------------//
+  //filtro db
   function FiltersCreated(e) {
     e.preventDefault();
     dispatch(FilterCreated(e.target.value));
@@ -63,14 +60,13 @@ const Home = () => {
     dispatch(Order(actualorderFilter.order));
     setCurrentPage(1);
   }
-  //----------------------FILTRAR POR DB----------------------//
-  //-----------------------ORDENADO--------------------//
+  //orden
   function Orders(e) {
     e.preventDefault();
     dispatch(Order(e.target.value));
     setCurrentPage(1);
   }
-  //-----------------------ORDENADO---------------------//
+
   return (
     <>
       <div className="container">
@@ -130,14 +126,12 @@ const Home = () => {
                 ) : (
                   <div
                     className="loading2"
-                    style={
-                      
-                      orderFilter == "created" && CurrentDogs.length == 0
-                        ? { display: "block" }
-                        : { display: "none" }
+                    style={orderFilter == "created" && CurrentDogs.length == 0 ?
+                    { display: "block" }
+                    : { display: "none" }
                     }
                   >
-                    <p>NO DOGS WERE FOUND</p>
+                    <p>NO SE PUDO ENCONTRAR NINGUN PERRO</p>
                     <img
                       src={gif}
                       alt="cargando"
@@ -156,6 +150,7 @@ const Home = () => {
                 paginaPrev={paginaPrev}
                 paginaSig={paginaSig}
                 lastPage={lastPage}
+                TotalPages={TotalPages}
               ></Paginado>
             </div>
           )}

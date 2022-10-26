@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import Nav from "../Nav/nav.jsx";
+import Nav from "../Nav/Nav.jsx";
 import gif from "../../img/GIFCARGA.gif";
 import "./Detail.css";
 const Detail = () => {
@@ -15,7 +14,6 @@ const Detail = () => {
         window.location.replace("/*");
       });
   }, []);
-  const dispatch = useDispatch();
 
   return (
     <>
@@ -28,7 +26,7 @@ const Detail = () => {
           <p> LOADING!</p>
           <img
             src={gif}
-            alt="SE PUDRIO EL SOQUE"
+            alt="cargando"
             height="300"
             width="300"
           ></img>
@@ -44,12 +42,12 @@ const Detail = () => {
               }}
               alt="Dog NOT FOUND"
             ></img>
-            <div>Name: {dog.name}</div>
-            <div>Life span: {dog.life_span} years</div>
-            <div>Weight: {dog.weight?.metric} Kg.</div>
-            <div>Height: {dog.height?.metric} Cm.</div>
-            <div>Temperaments: {dog.temperament?.map((el) => el.name)}</div>
-            <div>Origin: {dog.origin ? dog.origin : "Unknown"}</div>
+            <div>Nombre: {dog.name}</div>
+            <div>Esperanza de vida: {dog.life_span} </div>
+            <div>Peso: {dog.weight?.metric} Kg.</div>
+            <div>Altura: {dog.height?.metric} Cm.</div>
+            <div>Temperamento: {dog.temperament?.map((el) => el.name)}</div>
+            <div>Origen: {dog.origin ? dog.origin : "Unknown"}</div>
           </div>
         </div>
       </div>

@@ -1,9 +1,11 @@
 import React from "react";
 import "./Paginado.css";
 
-const Paginado = ({DogsPerPage,allDogs,paginaSig,paginaPrev,CurrentPage,firstPage,lastPage,
-}) => {
+const Paginado = ({DogsPerPage,allDogs,paginaSig,paginaPrev,
+  CurrentPage,firstPage,lastPage,TotalPages}) => {
   return (
+    <div>
+      
     <nav className="paginado">
       <button className="botonH" onClick={firstPage}>
         Inicio
@@ -27,6 +29,7 @@ const Paginado = ({DogsPerPage,allDogs,paginaSig,paginaPrev,CurrentPage,firstPag
       </button>
       
     </nav>
+    </div>
   );
 };
 

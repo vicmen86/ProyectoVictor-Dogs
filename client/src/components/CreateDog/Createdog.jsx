@@ -2,7 +2,7 @@ import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { postDog, getTemperament } from "../../redux/actions/index.js";
-import Nav from "../Nav/nav.jsx";
+import Nav from "../Nav/Nav.jsx";
 import validate from "../Validation/Validate.js";
 import "./Createdog.css";
 
@@ -16,8 +16,7 @@ const Createdog = () => {
 
   const [errors, setErrors] = useState({});
   const temperaments = useSelector((state) => state.Temperaments); 
-  //aca accedo a los temperamentos de la Store y lo asigno al personaje nuevo.
-  //aca traigo el input que luego va a ser despachado a la Store para crear el personaje.
+  
   const [input, setInput] = useState({
     name: "",
     height: "",

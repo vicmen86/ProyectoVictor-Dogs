@@ -1,5 +1,5 @@
 .search input[type="search"] {
-  width: 75vh;
+  width: 50vh;
   height: 30px;
   border-radius: 15px;
   border: none;
@@ -12,9 +12,7 @@
   margin: 8px;
   gap: 4vh;
 }
-.search::placeholder {
-  text-align: center;
-}
+
 .search button {
   background-size: contain;
   border-radius: 20%;
@@ -24,9 +22,9 @@
   font-weight: 600;
   border: none;
   cursor: pointer;
-  color: rgb(75, 11, 11);
+  color: rgb(123, 3, 3);
   transition: 0.5s;
-  text-shadow: 1px 1px 2.5px black;
+  text-shadow: 1px 1px 2px black;
 }
 .search button:hover {
   transform: scale(117%);
@@ -101,7 +99,7 @@
     right: 10px;
   }
 }
-@media (min-width: 570px) {
+/* @media (min-width: 570px) {
   .search {
     display: flex;
     flex-direction: row;
@@ -132,3 +130,4 @@
     right: 10px;
   }
 }
+ */

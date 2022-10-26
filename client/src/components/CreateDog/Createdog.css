@@ -19,14 +19,15 @@
   justify-content: center;
   border: 1px rgb(97, 95, 95) outset;
   width: 45%;
+  font-size: 18px;
   align-self: center;
   gap: 3px;
   padding-top: 3vh;
   padding-bottom: 3vh;
   backdrop-filter: blur(4px);
-  color: rgb(248, 196, 98);
-  text-shadow: 1px 1px 2px black;
-  box-shadow: 0px 0px 25px 19px rgba(4, 4, 0, 0.364);
+  color: rgb(246, 173, 78);
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 0px 0px 20px 15px rgba(145, 108, 83, 0.364);
 }
 .inputs {
   display: flex;
@@ -39,8 +40,8 @@
   background-color: transparent;
   font-size: 15px;
   font-weight: 800;
-  color: rgb(255, 255, 255);
-  text-shadow: 1px 1px 2px black;
+  color: rgb(39, 38, 38);
+  /* text-shadow: 1px 1px 2px black; */
   outline: none;
   text-align: center;
 }
@@ -51,7 +52,7 @@
   font-weight: 800;
   color: white;
   text-shadow: 1px 1px 2px black;
-  border-radius: 2vh;
+  border-radius: 1vh;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
 }
